@@ -54,7 +54,7 @@
 		  <div style=" float: left;">
 			<table>
 			  <tr>
-				<td colspan="4">Hall of Trophies</td>
+				<td colspan="4" style="text-align: center;">Hall of Trophies</td>
 			  </tr>
 			  <tr>
 				<td>
@@ -242,7 +242,7 @@
 			  <br/>
 			  <table>
 				<tr>
-					<td>
+					<td colspan="4" style="text-align: center;">
 						Resultados
 					</td>
 				</tr>
@@ -269,6 +269,14 @@
 					<td><label id="br1">0</label></td>
 					<td><label id="br2">0</label></td>
 					<td><label id="br3">0</label></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						Might total:
+					</td>
+					<td colspan="2">
+						<label id="total">0</label>
+					</td>
 				</tr>
 			  </table>
 		  </div>
@@ -304,6 +312,8 @@
 				document.getElementById("c3").innerHTML = parseInt(document.getElementById("c1").innerHTML) + parseInt(document.getElementById("c2").innerHTML);
 				document.getElementById("t3").innerHTML = parseInt(document.getElementById("t1").innerHTML) + parseInt(document.getElementById("t2").innerHTML);
 				document.getElementById("br3").innerHTML = parseInt(document.getElementById("br1").innerHTML) + parseInt(document.getElementById("br2").innerHTML);
+				
+				document.getElementById("total").innerHTML = parseInt(document.getElementById("c3").innerHTML) + parseInt(document.getElementById("t3").innerHTML) + parseInt(document.getElementById("br3").innerHTML);
 			}
 			
 			function retornabonus(campo) {
