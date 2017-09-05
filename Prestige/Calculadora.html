@@ -167,12 +167,13 @@
 			somarel = (parseInt(document.getElementById("rel75").value) * 75) + (parseInt(document.getElementById("rel24").value) * 24);
 			multiplicador = (somajoia + somagema + somarel);
 			multiplicador = multiplicador / 4;
-			might = document.getElementById("might").value;
+			might = parseFloat(document.getElementById("might").value) + 4;
 			document.getElementById("total").innerHTML = might * multiplicador;
 		}
 		function arrumanum(num){
 			num = num.replace(",",".")
 			return num;
 		}
+		
 	</script>
 </body>
