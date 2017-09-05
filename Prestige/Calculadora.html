@@ -165,9 +165,9 @@
 			somajoia = (parseFloat(arrumanum(document.getElementById("anel").value)) * 2) + (parseFloat(arrumanum(document.getElementById("amuleto").value)) * 2) + (parseFloat(arrumanum(document.getElementById("broche").value)) * 2) + (parseFloat(arrumanum(document.getElementById("bracelete").value)) * 2);
 			somagema = (parseFloat(arrumanum(document.getElementById("safira").value)) * 2) + (parseFloat(arrumanum(document.getElementById("rubi").value)) * 2) + (parseFloat(arrumanum(document.getElementById("esmeralda").value)) * 2) + (parseFloat(arrumanum(document.getElementById("topazio").value)) * 2);
 			somarel = (parseInt(document.getElementById("rel75").value) * 75) + (parseInt(document.getElementById("rel24").value) * 24);
-			multiplicador = (somajoia + somagema + somarel);
+			multiplicador = (somajoia + somagema + somarel + 4);
 			multiplicador = multiplicador / 4;
-			might = parseFloat(document.getElementById("might").value) + 4;
+			might = parseFloat(document.getElementById("might").value) ;
 			document.getElementById("total").innerHTML = might * multiplicador;
 		}
 		function arrumanum(num){
