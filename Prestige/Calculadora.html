@@ -53,7 +53,15 @@
 				</tr>
 				<tr>
 					<td colspan="1">Prestige</td>
-					<td colspan="3"><label id="total">0</label></td>
+					<td >Total Atual</td>
+					<td >Nivel</td>
+					<td >Prox. Nível Em</td>
+				</tr>
+				<tr>
+					<td colspan="1">Prestige</td>
+					<td colspan="1"><label id="total">0</label></td>
+					<td colspan="1"><label id="nv">0</label></td>
+					<td colspan="1"><label id="ft">0</label></td>
 				</tr>
 			</table>
 			<br/>
@@ -162,6 +170,8 @@
 	</div>
 	<script type="text/javascript">
 		function calcula() {
+			var ranks = [500,600,720,850,1000,1100,1175,1275,1375,1500,1650,1800,2000,2250,2500,2750,3050,3350,3750,4100,4500,4900,5400,5900,6400,7000,7600,8300,9000,10000,10900,11800,12800,14000,15500,17000,18500,20000,21500,23500,25500,27500,30000,32000,34500,37000,39500,42000,45000,50000,55000,62000,69000,78000,86000,95000,105000,115000,125000,140000,155000,170000,185000,205000,225000,245000,265000,290000,330000,380000,430000,480000,530000,590000,650000,720000,800000,870000,950000,1040000,1130000,1300000,1450000,1625000,1825000,2025000,2225000,2450000,2675000,2950000,3200000,3600000,4050000,4450000,4900000,5400000,5900000,6400000,6950000,7550000,8150000,9100000,10200000,11300000,12500000,13800000,15300000,16700000,18400000,20200000,22500000,25500000,28500000,31500000,35000000,39000000,42500000,47000000,51500000,56000000,63000000,70000000,77000000,85000000,92000000,100000000,108000000,116000000,125000000,135000000,153000000,172000000,191000000,211000000,232000000,254000000,277000000,300000000,324000000,357000000,402000000,448000000,496000000,557000000,609000000,662000000,731000000,788000000,847000000,923000000,986000000,1050000000,1110000000,1170000000,1230000000,1300000000,1360000000,1430000000,1500000000,1570000000];
+			
 			somajoia = (parseFloat(arrumanum(document.getElementById("anel").value)) * 2) + (parseFloat(arrumanum(document.getElementById("amuleto").value)) * 2) + (parseFloat(arrumanum(document.getElementById("broche").value)) * 2) + (parseFloat(arrumanum(document.getElementById("bracelete").value)) * 2);
 			somagema = (parseFloat(arrumanum(document.getElementById("safira").value)) * 2) + (parseFloat(arrumanum(document.getElementById("rubi").value)) * 2) + (parseFloat(arrumanum(document.getElementById("esmeralda").value)) * 2) + (parseFloat(arrumanum(document.getElementById("topazio").value)) * 2);
 			somarel = (parseInt(document.getElementById("rel75").value) * 75) + (parseInt(document.getElementById("rel24").value) * 24);
@@ -169,6 +179,15 @@
 			multiplicador = multiplicador / 4;
 			might = parseFloat(document.getElementById("might").value) ;
 			document.getElementById("total").innerHTML = might * multiplicador;
+			
+			var i = 0;
+			while (i < 160) {
+				if (document.getElementById("total").innerHTML > ranks[i]) {
+					document.getElementById("nv").innerHTML = i + 1;
+					document.getElementById("ft").innerHTML = ranks[i + 1] - parseInt(document.getElementById("total").innerHTML);
+				}
+				i++;
+			}
 		}
 		function arrumanum(num){
 			num = num.replace(",",".")
